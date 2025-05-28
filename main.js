@@ -74,7 +74,7 @@ function deleteUser(index) {
   const username = users[index].username;
   document.getElementById(
     'deleteUserMessage'
-  ).textContent = `Möchten Sie "${username}" wirklich löschen??`;
+  ).textContent = `Möchten Sie "${username}" wirklich löschen?`;
   document.getElementById('deleteModal').style.display = 'flex';
 }
 
@@ -133,8 +133,8 @@ function renderUsers() {
               </span>
             </div>
             <div class="card-actions">
-              <button class="edit-btn" onclick="openModal(${index})">Edit</button>
-              <button class="delete-btn" onclick="deleteUser(${index})">Delete</button>
+              <button class="edit-btn" onclick="openModal(${index})"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="delete-btn" onclick="deleteUser(${index})"><i class="fa-solid fa-trash"></i></button>
             </div>
           `;
     userList.appendChild(card);
