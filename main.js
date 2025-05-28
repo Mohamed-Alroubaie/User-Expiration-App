@@ -101,7 +101,7 @@ function getRemainingTime(endDate) {
   console.log(diff, days, months);
 
   if (diff <= 0) {
-    return 'Expired';
+    return 'Abgelaufen';
   }
 
   if (months >= 1) {
