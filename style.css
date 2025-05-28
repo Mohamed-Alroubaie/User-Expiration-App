@@ -1,0 +1,161 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.user-card {
+  background: white;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 6px solid #007bff;
+  transition: transform 0.2s ease;
+}
+
+.user-card.expired {
+  border-left-color: #dc3545;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.user-info strong {
+  font-size: 18px;
+  color: #333;
+}
+
+.user-info span {
+  display: block;
+  margin-top: 6px;
+  color: #555;
+}
+
+.user-info span.expired {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.card-actions button {
+  margin-left: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background-color: #076aff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.add-user-btn {
+  background-color: #078bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 30px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.save-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.close-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+#installInstructions {
+  display: none;
+}
+@media (display-mode: browser) {
+  #installInstructions {
+    display: block;
+  }
+}
