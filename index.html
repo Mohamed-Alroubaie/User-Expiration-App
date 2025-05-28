@@ -26,40 +26,49 @@
     <meta name="theme-color" content="#333" />
     <link rel="stylesheet" href="style.css" />
 
-    <title>Expiration Tracker</title>
+    <title>Ablauf-Tracker für Studenten</title>
   </head>
   <body>
-    <header>User Expiration Tracker</header>
+    <header>Ablauf-Tracker für Studenten</header>
 
+    <button class="add-user-btn" onclick="openModal()">
+      Schüler Hinzufügen
+    </button>
     <div class="container">
-      <button class="add-user-btn" onclick="openModal()">Add User</button>
       <div id="userList"></div>
     </div>
 
     <div class="modal" id="userModal">
       <div class="modal-content">
-        <h3 id="modalTitle">Add New User</h3>
-        <input type="text" id="username" placeholder="Enter username" />
+        <h3 id="modalTitle">Neuen Schüler Hinzufügen</h3>
+        <input
+          type="text"
+          id="username"
+          placeholder="Geben Sie den Studentennamen ein"
+        />
         <input type="date" id="startDate" />
         <div>
-          <button class="save-btn" onclick="saveUser()">Save</button>
-          <button class="close-btn" onclick="closeModal()">Cancel</button>
+          <button class="save-btn" onclick="saveUser()">Speichern</button>
+          <button class="close-btn" onclick="closeModal()">Stornieren</button>
         </div>
       </div>
     </div>
     <div class="modal" id="deleteModal">
       <div class="modal-content">
-        <h3>Confirm Deletion</h3>
-        <p id="deleteUserMessage">Are you sure you want to delete this user?</p>
+        <h3>Bestätigen Sie den Löschvorgang</h3>
+        <p id="deleteUserMessage">
+          Möchten Sie diesen Benutzer wirklich löschen?
+        </p>
         <div>
           <button class="delete-btn" onclick="confirmDelete()">
-            Yes, Delete
+            Ja, löschen
           </button>
-          <button class="close-btn" onclick="closeDeleteModal()">Cancel</button>
+          <button class="close-btn" onclick="closeDeleteModal()">
+            Stornieren
+          </button>
         </div>
       </div>
     </div>
-    <button id="installBtn" style="display: none">Install App</button>
 
     <script src="main.js"></script>
   </body>

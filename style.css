@@ -80,12 +80,12 @@ header {
   background-color: #078bff;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 1rem 1.2rem;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
   display: block;
-  margin: 0 auto 30px;
+  margin: 1rem 0.5rem 0 auto;
 }
 
 /* Modal Styles */
@@ -107,7 +107,7 @@ header {
   padding: 30px;
   border-radius: 10px;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease;
 }

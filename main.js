@@ -25,7 +25,7 @@ function saveToLocalStorage() {
 function openModal(index = null) {
   document.getElementById('userModal').style.display = 'flex';
   document.getElementById('modalTitle').textContent =
-    index !== null ? 'Edit User' : 'Add New User';
+    index !== null ? 'Benutzer Bearbeiten' : 'Neuen Schüler Hinzufügen';
   if (index !== null) {
     editingIndex = index;
     document.getElementById('username').value = users[index].username;
@@ -48,7 +48,9 @@ function saveUser() {
   const startDateStr = document.getElementById('startDate').value;
 
   if (!username || !startDateStr) {
-    alert('Please enter both username and start date.');
+    alert(
+      'Bitte geben Sie sowohl den Studentennamen als auch das Startdatum ein.'
+    );
     return;
   }
 
@@ -72,7 +74,7 @@ function deleteUser(index) {
   const username = users[index].username;
   document.getElementById(
     'deleteUserMessage'
-  ).textContent = `Are you sure you want to delete "${username}"?`;
+  ).textContent = `Möchten Sie "${username}" wirklich löschen??`;
   document.getElementById('deleteModal').style.display = 'flex';
 }
 
@@ -103,9 +105,9 @@ function getRemainingTime(endDate) {
   }
 
   if (months >= 1) {
-    return `${months} month(s) left`;
+    return `Noch ${months} Monate`;
   } else {
-    return `${days} day(s) left`;
+    return `${days} Tag(e) übrig`;
   }
 }
 
@@ -119,7 +121,7 @@ function renderUsers() {
     const card = document.createElement('div');
     const isExpired = user.endDate < new Date();
 
-    card.className = 'user-card' + (isExpired ? ' expired' : '');
+    card.className = 'user-card' + (isExpired ? ' Abgelaufen' : '');
 
     card.innerHTML = `
             <div class="user-info">
