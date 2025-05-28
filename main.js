@@ -148,35 +148,3 @@ if ('serviceWorker' in navigator) {
       .catch((err) => console.error('❌ Service Worker failed:', err));
   });
 }
-
-const installBtn = document.createElement('button');
-installBtn.textContent = 'Install App';
-installBtn.style.position = 'fixed';
-installBtn.style.bottom = '20px';
-installBtn.style.right = '20px';
-installBtn.style.padding = '10px 20px';
-installBtn.style.fontSize = '16px';
-installBtn.style.zIndex = 1000;
-installBtn.style.display = 'none'; // hide initially
-document.body.appendChild(installBtn);
-
-// Listen for the beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', (e) => {
-  console.log('📥 beforeinstallprompt event fired');
-  e.preventDefault(); // Prevent the mini-infobar from appearing on mobile
-  deferredPrompt = e; // Save the event so it can be triggered later
-  installBtn.style.display = 'block'; // Show the install button
-});
-
-// When user clicks the install button
-installBtn.addEventListener('click', async () => {
-  installBtn.style.display = 'none'; // Hide the button
-  if (!deferredPrompt) {
-    console.log('No deferredPrompt available');
-    return;
-  }
-  deferredPrompt.prompt(); // Show the install prompt
-  const choiceResult = await deferredPrompt.userChoice;
-  console.log(`User response to the install prompt: ${choiceResult.outcome}`);
-  deferredPrompt = null;
-});
